@@ -3,18 +3,19 @@
 
 class Ellipse: public Body2D {
 
-	double x1, y1;		   //center of the ellipse
-	double radius1;
-	double radius2;
+	float x1;		   //center of the ellipse
+	float y1;		   
+	float radius1;
+	float radius2;
 
 public:
 
-	Ellipse(double _x1, double _y1, double _radius1, double _radius2);
+	Ellipse(float InX1, float InY1, float _radius1, float _radius2);
 	~Ellipse();
 
-	virtual double perimeterCalc();
-	virtual double areaCalc();
-	virtual std::tuple<double, double> getCenter();
+	virtual float GetPerimeter();
+	virtual float GetArea();
+	virtual Point2D GetCenter();
 
 };
 

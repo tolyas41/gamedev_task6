@@ -1,25 +1,29 @@
 #include "Box.h"
 
-Box::Box(double _x1, double _y1, double _z1, double _side1, double _side2, double _side3) 
-	: x1(_x1), y1(_y1), z1(_z1), side1(_side1), side2(_side2), side3(_side3) {
+Box::Box(float InX1, float InY1, float InZ1, float _side1, float _side2, float _side3) 
+	: x1(InX1), y1(InY1), z1(InZ1), side1(_side1), side2(_side2), side3(_side3) {
 }
 Box::~Box() {
 }
 
-double Box::surfaceCalc() {
+float Box::GetSurfaceArea() {
 	return 2 * side1 * side2 + 2 * side2 * side3 + 2 * side3 * side1;
 }
 
-double Box::volumeCalc() {
+float Box::GetVolume() {
 	return side1 * side2 * side3;
 }
 
-std::tuple<double, double, double> Box::getCenter() {
-	return std::make_tuple(x1 + side1 / 2, y1 + side2 / 2, z1 + side3 / 2);
+Body3D::Point3D Box::GetCenter() {
+	Point3D center;
+	center.x = x1 + side1 / 2;
+	center.y = y1 + side2 / 2;
+	center.z = z1 + side3 / 2;
+	return center;
 }
 
-std::vector<double> Box::getVertices() {
-	std::vector<double> vertices;
+std::vector<float> Box::GetVertices() {
+	std::vector<float> vertices;
 	vertices.push_back(x1);			  //1
 	vertices.push_back(y1);
 	vertices.push_back(z1);

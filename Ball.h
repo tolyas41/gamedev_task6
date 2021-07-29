@@ -3,17 +3,19 @@
 
 class Ball: public Body3D {
 
-	double x1, y1, z1;	  //center
-	double radius;
+	float x1;
+	float y1;
+	float z1;
+	float radius;
 
 public:
 
-	Ball(double _x1, double _y1, double _z1, double _radius);
+	Ball(float InX1, float InY1, float InZ1, float _radius);
 	~Ball();
 
-	virtual double surfaceCalc();
-	virtual double volumeCalc();
-	virtual std::tuple<double, double, double> getCenter();
+	virtual float GetSurfaceArea();
+	virtual float GetVolume();
+	virtual Point3D GetCenter();
 
 };
 

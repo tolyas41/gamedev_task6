@@ -1,19 +1,23 @@
 #include "Ball.h"
 
-Ball::Ball(double _x1, double _y1, double _z1, double _radius)
-	: x1(_x1), y1(_y1), z1(_z1), radius(_radius) {
+Ball::Ball(float InX1, float InY1, float InZ1, float _radius)
+	: x1(InX1), y1(InY1), z1(InZ1), radius(_radius) {
 }
 Ball::~Ball() {
 }
 
-double Ball::surfaceCalc() {
-	return 4 * 3.1416 * radius * radius;
+float Ball::GetSurfaceArea() {
+	return 4 * M_PI * radius * radius;
 }
 
-double Ball::volumeCalc() {
-	return 4 * 3.1416 * radius * radius * radius / 3;
+float Ball::GetVolume() {
+	return 4 * M_PI * radius * radius * radius / 3;
 }
 
-std::tuple<double, double, double> Ball::getCenter() {
-	return std::make_tuple(x1, y1, z1);
+Body3D::Point3D Ball::GetCenter() {
+	Point3D center;
+	center.x = x1;
+	center.y = y1;
+	center.z = z1;
+	return center;
 }

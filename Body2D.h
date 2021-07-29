@@ -1,12 +1,16 @@
 #pragma once
-#include <tuple>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 class Body2D {
 public:
-	
-	virtual double perimeterCalc() = 0;
-	virtual double areaCalc() = 0;
-	virtual std::tuple<double, double> getCenter() = 0;
+	struct Point2D {
+		float x;
+		float y;
+	};
+	virtual float GetPerimeter() = 0;
+	virtual float GetArea() = 0;
+	virtual Point2D GetCenter() = 0;
 
 };
 

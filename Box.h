@@ -4,20 +4,22 @@
 
 class Box: public Body3D {
 
-	double x1, y1, z1;
-	double side1;		 //x axis side
-	double side2;		 //y axis side
-	double side3;		 //z axis side
+	float x1;
+	float y1;
+	float z1;
+	float side1;		 //x axis side
+	float side2;		 //y axis side
+	float side3;		 //z axis side
 
 public:
 
-	Box(double _x1, double _y1, double _z1, double _side1, double _side2, double _side3);
+	Box(float InX1, float InY1, float InZ1, float _side1, float _side2, float _side3);
 	~Box();
 
-	virtual double surfaceCalc();
-	virtual double volumeCalc();
-	virtual std::tuple<double, double, double> getCenter();
-	std::vector<double> getVertices();
+	virtual float GetSurfaceArea();
+	virtual float GetVolume();
+	virtual Point3D GetCenter();
+	std::vector<float> GetVertices();
 
 };
 

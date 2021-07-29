@@ -4,21 +4,28 @@
 
 class Parallelogram: public Body2D {
 
-	double x1, y1;			//intersection side1-side2
-	double x2, y2;			//side1 endpoint
-	double x3, y3;			//side2 endpoint
-	double side1;
-	double side2;
-	double angle;
+	float x1;			//intersection side1-side2
+	float y1;
+	float x2;			//side1 endpoint
+	float y2;
+	float x3;			//side2 endpoint
+	float y3;
+	std::vector<float> coordinates;
+	std::vector<float> vertices = CalculateVertices();
+	float side1;
+	float side2;
+	float angle;
+
+	std::vector<float> CalculateVertices();
 
 public:
 
-	Parallelogram(double _x1, double _y1, double _x2, double _y2, double _x3, double _y3);
+	Parallelogram(float InX1, float InY1, float InX2, float InY2, float InX3, float InY3);
 	~Parallelogram();
 
-	virtual double areaCalc();
-	virtual double perimeterCalc();
-	virtual std::tuple<double, double> getCenter();
-	std::vector<double> getVertices();
+	virtual float GetArea();
+	virtual float GetPerimeter();
+	virtual Point2D GetCenter();
+	std::vector<float> GetVertices();
 };
 

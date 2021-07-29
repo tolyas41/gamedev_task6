@@ -1,21 +1,23 @@
 #include "Ellipse.h"
-#include <math.h>
 
 
-Ellipse::Ellipse(double _x1, double _y1, double _radius1, double _radius2)
-	: x1(_x1), y1(_y1), radius1(_radius1), radius2(_radius2) {
+Ellipse::Ellipse(float InX1, float InY1, float _radius1, float _radius2)
+	: x1(InX1), y1(InY1), radius1(_radius1), radius2(_radius2) {
 }
 Ellipse::~Ellipse() {
 }
 
-double Ellipse::perimeterCalc() {
-	return 2 * 3.1416 * sqrt((radius1 * radius1 + radius2 * radius2) / 2);
+float Ellipse::GetPerimeter() {
+	return 2 * M_PI * sqrt((radius1 * radius1 + radius2 * radius2) / 2);
 }
 
-double Ellipse::areaCalc() {
-	return 3.1416 * radius1 * radius2;
+float Ellipse::GetArea() {
+	return M_PI * radius1 * radius2;
 }
 
-std::tuple<double, double> Ellipse::getCenter() {
-	return std::make_tuple(x1, y1);
+Body2D::Point2D Ellipse::GetCenter() {
+	Point2D center;
+	center.x = x1;
+	center.y = y1;
+	return center;
 }
