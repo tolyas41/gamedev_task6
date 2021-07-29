@@ -10,12 +10,12 @@ class Ellipse: public Body2D {
 
 public:
 
-	Ellipse(float InX1, float InY1, float _radius1, float _radius2);
+	Ellipse(float InX1, float InY1, float InRadius1, float InRadius2);
 	~Ellipse();
 
 	virtual float GetPerimeter();
 	virtual float GetArea();
-	virtual Point2D GetCenter();
+	virtual Center2D GetCenter();
 
 };
 

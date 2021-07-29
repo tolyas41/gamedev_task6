@@ -10,12 +10,12 @@ class Ball: public Body3D {
 
 public:
 
-	Ball(float InX1, float InY1, float InZ1, float _radius);
+	Ball(float InX1, float InY1, float InZ1, float InRadius);
 	~Ball();
 
 	virtual float GetSurfaceArea();
 	virtual float GetVolume();
-	virtual Point3D GetCenter();
+	virtual Center3D GetCenter();
 
 };
 
