@@ -3,19 +3,17 @@
 
 class Ball: public Body3D {
 
-	float x1;
-	float y1;
-	float z1;
+	Point3D pivot;
 	float radius;
 
 public:
 
-	Ball(float InX1, float InY1, float InZ1, float InRadius);
+	Ball(float InX, float InY, float InZ, float InRadius);
 	~Ball();
 
 	virtual float GetSurfaceArea();
 	virtual float GetVolume();
-	virtual Center3D GetCenter();
+	virtual Point3D GetCenter();
 
 };
 

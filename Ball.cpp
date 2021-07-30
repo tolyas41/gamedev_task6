@@ -1,7 +1,12 @@
 #include "Ball.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
-Ball::Ball(float InX1, float InY1, float InZ1, float InRadius)
-	: x1(InX1), y1(InY1), z1(InZ1), radius(InRadius) {
+Ball::Ball(float InX, float InY, float InZ, float InRadius)
+	: radius(InRadius) {
+	pivot.x = InX;
+	pivot.y = InY;
+	pivot.z = InZ;
 }
 Ball::~Ball() {
 }
@@ -14,10 +19,6 @@ float Ball::GetVolume() {
 	return 4 * M_PI * radius * radius * radius / 3;
 }
 
-Body3D::Center3D Ball::GetCenter() {
-	Center3D center;
-	center.x = x1;
-	center.y = y1;
-	center.z = z1;
-	return center;
+Body3D::Point3D Ball::GetCenter() {
+	return pivot;
 }

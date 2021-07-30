@@ -5,20 +5,17 @@
 class Parallelogram: public Body2D {
 
 	struct InitialPoint {
-		float x1;			//intersection side1-side2
-		float y1;
-		float x2;			//side1 endpoint
-		float y2;
-		float x3;			//side2 endpoint
-		float y3;
+		Point2D initial;		//intersection side1-side2
+		Point2D coord1;			//side1 endpoint
+		Point2D coord2;			//side2 endpoint
 	};
 	InitialPoint point;
 	float side1;
 	float side2;
 	float angle;
-
-	std::vector<float> CalculateVertices();
-	std::vector<float> vertices = CalculateVertices();
+	Point2D pivot;
+	void CalculateVertices();
+	std::vector<float> vertices;
 
 public:
 
@@ -27,7 +24,7 @@ public:
 
 	virtual float GetArea();
 	virtual float GetPerimeter();
-	virtual Center2D GetCenter();
+	virtual Point2D GetCenter();
 	std::vector<float> GetVertices();
 };
 
